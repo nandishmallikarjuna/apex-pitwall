@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-pitwall: #080b12;
+    --card-pitwall: #0f1523;
+    --border-pitwall: #1e293b;
+    --accent-cyan: #00f0ff;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-emerald: #10b981;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-pitwall);
+    color: #e2e8f0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-pitwall);
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Custom pulse animations */
+@keyframes sc-hazard-pulse {
+  0%, 100% {
+    opacity: 1;
+    border-color: rgba(245, 158, 11, 0.9);
+  }
+  50% {
+    opacity: 0.75;
+    border-color: rgba(245, 158, 11, 0.4);
+  }
+}
+
+.animate-sc-hazard {
+  animation: sc-hazard-pulse 1.6s infinite ease-in-out;
+}
